@@ -30,6 +30,7 @@ DEBUG = str(os.getenv('DEBUG')) != 'False'
 
 ALLOWED_HOSTS = [
     'iambluming.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
