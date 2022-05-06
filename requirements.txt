@@ -21,7 +21,7 @@ pyparsing==3.0.7
 pypiwin32==223
 python-dotenv==0.20.0
 python-http-client==3.0.0
-pywin32==3.0.3
+pywin32==303
 requests==2.27.1
 sendgrid==5.0.0
 six==1.16.0
