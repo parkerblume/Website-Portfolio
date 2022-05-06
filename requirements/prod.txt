@@ -1,0 +1,7 @@
+Django==4.0
+psycopg2==2.9.3
+bleach==4.1.0
+sendgrid==5.0
+django-sendgrid-v5==1.2.0
+python-dotenv==0.20.0
+docker==4.2.2

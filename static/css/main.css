@@ -1,0 +1,375 @@
+#main {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+@media (min-width: 992px) {
+  #main {
+    height: 100vh;
+    padding: 0rem;
+  }
+}
+
+
+
+.page-section {
+  padding: 6rem 0;
+}
+.page-section .page-section-heading {
+  font-size: 2.25rem;
+  line-height: 2rem;
+}
+@media (min-width: 992px) {
+  .page-section .page-section-heading {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+}
+
+.divider-custom {
+  margin: 1.25rem 0 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divider-custom .divider-custom-line {
+  width: 100%;
+  max-width: 7rem;
+  height: 0.25rem;
+  background-color: rgba(120,81,169, 1.00);
+  border-radius: 2rem;
+  border-color: rgba(120,81,169, 1.00);;
+}
+.divider-custom .divider-custom-line:first-child {
+  margin-right: 1rem;
+}
+.divider-custom .divider-custom-line:last-child {
+  margin-left: 1rem;
+}
+.divider-custom .divider-custom-icon {
+  color: rgba(120,81,169, 1.00);
+  font-size: 2rem;
+}
+.divider-custom.divider-light .divider-custom-line {
+  background-color: #fff;
+}
+.divider-custom.divider-light .divider-custom-icon {
+  color: #fff;
+}
+
+
+.text-purple {
+  --bs-text-opacity: 1;
+  color: rgba(120,81,169, 1.00) !important;
+}
+
+
+/* navbar setup */
+
+#mainNav { /* Background of navbar */
+  min-height: 3.5rem;
+  background-color: #fff;
+}
+
+/* Menu in resizable navbar */
+#mainNav .navbar-toggler {
+  font-size: 80%;
+  padding: 0.75rem;
+  color: #7851a9;
+  border: 1px solid #7851a9;
+}
+
+#mainNav .navbar-toggler:focus {
+  outline: none;
+}
+
+#mainNav .navbar-brand {
+  color: fade(#fff, 80%);
+  font-weight: 700;
+  padding: 0.9rem 0;
+}
+
+#mainNav .navbar-nav .nav-item:hover {
+  color: rgba(120,81,169, 1.00);
+  outline: none;
+  background-color: transparent;
+}
+#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+/* Not Resized NavBar */
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  #mainNav .navbar-brand {
+    padding: 0.5rem 0;
+    color: fade(#fff, 80%);
+  }
+  #mainNav .nav-link {
+    transition: none;
+    padding: 2rem 1.5rem;
+    color: fade(#fff, 80%);
+  }
+  #mainNav .nav-link:hover {
+    color: #fff;
+  }
+  #mainNav .nav-link:active {
+    color: #000;
+  }
+  #mainNav.navbar-shrink {
+    background-color: #fff;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    color: #000;
+  }
+  #mainNav.navbar-shrink .nav-link {
+    color: #000;
+    padding: 1.5rem 1.5rem 1.25rem;
+    border-bottom: 0.25rem solid transparent;
+  }
+  #mainNav.navbar-shrink .nav-link:hover {
+    color: rgba(120,81,169, 1.00);
+  }
+  #mainNav.navbar-shrink .nav-link:active {
+    color: rgba(120,81,169, 0.5);
+  }
+  #mainNav.navbar-shrink .nav-link.active {
+    color: rgba(120,81,169, 1.00);
+    outline: none;
+    border-bottom: 0.25rem solid rgba(120,81,169, 1.00);
+  }
+}
+
+/* background + text - main page */
+.masthead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../theme/assets/img/bg-masthead.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.masthead h1, .masthead .h1 {
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.masthead h2, .masthead .h2 {
+  max-width: 20rem;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .masthead h1, .masthead .h1 {
+    font-size: 20rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .masthead {
+    height: 100vh;
+    padding: 0;
+  }
+  .masthead h1, .masthead .h1 {
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.8rem;
+  }
+  .masthead h2, .masthead .h2 {
+    max-width: 30rem;
+    font-size: 1.25rem;
+  }
+}
+
+/* avatar for projects.html */
+.masthead .masthead-avatar {
+  width: 15rem;
+}
+
+.projects-section {
+  padding: 10rem 0;
+}
+.projects-section .featured-text {
+  padding: 2rem;
+}
+@media (min-width: 992px) {
+  .projects-section .featured-text {
+    padding: 0 0 0 2rem;
+    border-left: 0.5rem solid #7851a9;
+  }
+}
+.projects-section .project-text {
+  padding: 3rem;
+  font-size: 90%;
+}
+@media (min-width: 992px) {
+  .projects-section .project-text {
+    padding: 5rem;
+  }
+  .projects-section .project-text hr {
+    border-color: #7851a9;
+    border-width: 0.25rem;
+    width: 30%;
+  }
+}
+
+/* button color */
+.btn {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+  padding: 1.00rem 2rem;
+  font-family: "Varela Round", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  border: 0;
+  border-radius: .125rem;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #7851a9;
+  border-color: #563A78;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #563A78;
+  border-color: #563A78;
+}
+.btn-primary:disabled, .btn-primary.disabled {
+  color: #fff;
+  background-color: #7851a9;
+  border-color: #7851a9;
+}
+
+h1, .h1 {
+  font-size: calc(1.375rem + 1.5vw);
+}
+@media (min-width: 1200px) {
+  h1, .h1 {
+    font-size: 2.5rem;
+  }
+}
+
+h2, .h2 {
+  font-size: calc(1.325rem + 0.9vw);
+}
+@media (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 2rem;
+  }
+}
+
+h3, .h3 {
+  font-size: calc(1.3rem + 0.6vw);
+}
+@media (min-width: 1200px) {
+  h3, .h3 {
+    font-size: 1.75rem;
+  }
+}
+
+h4, .h4 {
+  font-size: calc(1.275rem + 0.3vw);
+  color: #999999;
+}
+@media (min-width: 1200px) {
+  h4, .h4 {
+    font-size: 1.5rem;
+  }
+}
+
+h5, .h5 {
+  font-size: 1.25rem;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.align-auto {
+  text-align: center;
+}
+@media (min-width:1200px) {
+  .align-auto {
+    text-align: left;
+  }
+}
+
+/* tab-box styling */
+
+.tab {
+  position: relative;
+  float: left;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(131, 131, 131, 0.5);
+  width: 30%;
+  height: 13rem;
+}
+
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+  color: #614187;
+}
+
+.tab button.active {
+  background-color: rgba(204, 204, 204, 0.5);
+  color: rgba(120,81,169);
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgba(59, 59, 59, 0.2);
+  width: auto;
+  border-left: none;
+  height: 13rem;
+  }
+@media (min-width: 1200px) {
+  .tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgba(59, 59, 59, 0.2);
+    width: 45rem;
+    border-left: none;
+    height: 13rem;
+  }
+}

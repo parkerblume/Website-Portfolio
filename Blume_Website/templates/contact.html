@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Parker Blume | Contact{% endblock %}
+
+{% block content%}
+
+<!-- Signup-->
+<section class="signup-section" id="signup">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-lg-10 col-md-8 mx-auto text-center">
+              <!-- Contact Section Heading-->
+              <h2 class="page-section-heading text-white text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+              <!-- Icon Divider-->
+              <div class="divider-custom"> 
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon"><i class="fas fa-paper-plane"></i></div>
+                  <div class="divider-custom-line"></div>
+              </div>
+              <!-- Contact Section Form-->
+              <div class="row justify-content-center">
+                  <div class="col-lg-8 col-xl-7">
+
+                    {% if success %}
+                    <div class="alert alert-success" role="alert">
+                      Message successfully sent! I will provide a response as soon as I can, thank you!
+                    </div>
+                    {% endif %}
+
+                      <form id="contactForm" name="sentMessage" novalidate="novalidate" method="post" action="">
+                        {% csrf_token %}
+
+                        {% if form.non_field_errors %}
+                        <div class="alert alert-danger" role="alert">
+                          {{ form.non_field_errors }}
+                        </div>
+                        {% endif %}
+
+                          <div class="row form-floating">
+                            <div class="col-md-6">
+                              <!-- Name input-->
+                              <div class="form-floating floating-label-form-group mb-3">
+                                {{ form.name }}
+                                <label for="name">Full Name</label>
+                                <div class="invalid-feedback">{{ form.name.errors }}</div>
+                              </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                            <div class="col-md-6">
+                          <!-- Email address input-->
+                              <div class="form-floating mb-3">
+                                {{ form.email }}
+                                <label for="email">Email address</label>
+                                <div class="invalid-feedback">{{ form.email.errors }}</div>
+                                <div class="invalid-feedback">{{ form.email.errors }}</div>
+                              </div>
+                            </div>
+                            <!-- /.col-md-6 -->
+                          </div>
+                          <!-- .row -->
+                          <!-- Subject input-->
+                          <div class="form-floating mb-3">
+                              {{ form.subject }}
+                              <label for="email">Subject</label>
+                              <div class="invalid-feedback">{{ form.subject.label }} is required.</div>
+                          </div>
+                          <!-- Message input-->
+                          <div class="form-floating mb-3">
+                              {{ form.message }}
+                              <label for="message">Message</label>
+                              <div class="invalid-feedback ">{{ form.message.errors }}</div>
+                          </div>
+
+                          {% if form.errors %}
+                              {% for field in form %}
+                                  {% for error in field.errors %}
+                                      <div class="alert alert-danger">
+                                          <strong>{{ field.label }} is required.</strong>
+                                      </div>
+                                  {% endfor %}
+                              {% endfor %}
+                          {% endif %}
+
+                          <!-- Submit error message-->
+                          <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">{{ form.errors }}</div></div>
+                          <!-- Submit Button-->
+                          <button class="btn btn-primary" id="submitButton" type="submit">Send</button>
+                      </form>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Info -->
+    <div class="contact-section">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+              <!-- Footer Location-->
+              <div class="col-lg-4 mb-5 mb-lg-0 text-center">
+                  <h4 class="text-uppercase mb-3" style="color: #7851a9;">Location</h4>
+                  <p class="lead text-white mb-0">
+                      Orlando, FL
+                      <br />
+                      32817
+                  </p>
+              </div>
+              <!-- Footer Social Icons-->
+              <div class="col-lg-4 mb-5 mb-lg-0 text-center">
+                  <h4 class="text-uppercase text-white mb-4">Around the Web</h4>
+                  <div class="social d-flex mt-auto justify-content-center">
+                    <a class="mx-2" href="https://github.com/SolutionsThatBlume"><i class="fab fa-github"></i></a>
+                    <a class="mx-2" href="https://www.linkedin.com/in/parker-blume/"><i class="fab fa-linkedin"></i></a>
+                    <a class="mx-2" onclick="showMessage()" href="#!"><i class="fab fa-youtube"></i></a>
+                    <div id="errorText" class="text-white"><br /></div>
+                  </div>
+              </div>
+              <!-- Footer About Text-->
+              <div class="col-lg-4 mb-5 text-center">
+                  <h4 class="text-uppercase mb-3" style="color: #7851a9;">Quick Notes</h4>
+                  <p class="lead text-white mb-0">
+                      Always willing to expand my knowledge, so feel to free to contact about anything!
+                  </p>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer-->
+    <footer class="footer bg-transparent small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Parker Blume 2021</div></footer>
+</section>
+
+{% endblock %}

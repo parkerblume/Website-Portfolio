@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}Parker Blume | Home{% endblock %}
+
+
+{% block content%}
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Hi, I'm Parker Blume.</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">This is the documentation of me.</h2>
+                <a class="btn btn-primary" href="#about">Learn More</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- About-->
+<section class="about-section text-center" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-0 align-items-center">
+            <div class="col-md-5 mt-3">
+              <img class="masthead-avatar mt-5" src="{% static '/img/avatar.png' %}" alt="image" style="position:relative; width:70%; height: 70%;"/>
+            </div>
+
+            <div class="col-md-6">
+                <h2 class="text-white mb-4">About Me</h2>
+                <p class="align-auto text-white-50">
+                  Currently a junior in the Computer Science program at the University of Central Florida, looking to delve
+                  into the professional world and gain valuable experience.
+                  <br><br>
+                  Well-organised, driven to push myself with a passion for learning.
+                  Hobbies include creating music and small passion projects. Enjoyer of outdoor activities, and TV series.
+                  <br><br>
+                  <span style="color:rgba(120,81,169, 1.00);"><strong>Excited to expand my knowledge in the professional world!</strong></span>
+                </p>
+            </div>
+            <!-- /.col-md-6 -->
+          <!-- .row -->
+        </div>
+    </div>
+
+</section>
+{% endblock %}
