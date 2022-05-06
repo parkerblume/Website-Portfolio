@@ -145,3 +145,8 @@ helm/
 get_helm.sh
 kubectl.exe
 kubectl.exe.sha256
+
+# Changed deployment process, so this is not needed.
+Makefile
+Dockerfile
+docker-compose.yml
