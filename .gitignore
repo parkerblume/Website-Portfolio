@@ -93,11 +93,6 @@ Blume_Website/*
 !templates/
 !*.py
 
-Blume_Website/apps/*
-accounts/
-!contact/
-!public/
-
 ## Ignore Mac OS Stuff
 .DS_Store
 .AppleDouble
