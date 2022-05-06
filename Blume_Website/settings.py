@@ -40,13 +40,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "Blume_Website.apps.accounts",
     "Blume_Website.apps.contact",
     "sendgrid",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -125,15 +125,15 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, 'static')
 ]
 
-LOGIN_URL = "accounts:login"
-LOGIN_REDIRECT_URL = "public:index"
-LOGOUT_REDIRECT_URL = "public:index"
+#LOGIN_URL = "accounts:login"
+#LOGIN_REDIRECT_URL = "public:index"
+#LOGOUT_REDIRECT_URL = "public:index"
 
 #Load environment variables from .env file
 SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
@@ -149,3 +149,7 @@ SENDGRID_SANDBOX_MODE_IN_DEBUG = False
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Simplified static file serving.
+# https://pypi.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
