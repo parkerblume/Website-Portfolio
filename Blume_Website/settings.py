@@ -81,21 +81,21 @@ WSGI_APPLICATION = "Blume_Website.wsgi.application"
 
 # Database
 
-POSTGRES_HOST = os.environ.get('POSTGRES_HOST', default="")
-POSTGRES_DB = os.environ.get('POSTGRES_DB', default="")
-POSTGRES_USER = os.environ.get('POSTGRES_USER', default="")
-POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD', default="")
+#POSTGRES_HOST = os.environ.get('POSTGRES_HOST', default="")
+#POSTGRES_DB = os.environ.get('POSTGRES_DB', default="")
+#POSTGRES_USER = os.environ.get('POSTGRES_USER', default="")
+#POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD', default="")
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": POSTGRES_DB,
-        "USER": POSTGRES_USER,
-        "PASSWORD": POSTGRES_PASSWORD,
-        "HOST": POSTGRES_HOST,
-        "PORT": 5432,
-    }
-}
+#DATABASES = {
+#    "default": {
+#        "ENGINE": "django.db.backends.postgresql",
+#        "NAME": POSTGRES_DB,
+#        "USER": POSTGRES_USER,
+#        "PASSWORD": POSTGRES_PASSWORD,
+#        "HOST": POSTGRES_HOST,
+#        "PORT": 5432,
+#    }
+#}
 
 
 # Password validation
