@@ -7,7 +7,6 @@ from Blume_Website import settings
 
 from .forms import ContactForm
 
-from django.contrib import messages
 
 def contact(request: HttpRequest) -> HttpResponse:
     if request.method == "GET":
