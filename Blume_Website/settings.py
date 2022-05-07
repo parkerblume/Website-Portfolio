@@ -81,21 +81,21 @@ WSGI_APPLICATION = "Blume_Website.wsgi.application"
 
 # Database
 
-#POSTGRES_HOST = os.environ.get('POSTGRES_HOST', default="")
-#POSTGRES_DB = os.environ.get('POSTGRES_DB', default="")
-#POSTGRES_USER = os.environ.get('POSTGRES_USER', default="")
-#POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD', default="")
+POSTGRES_HOST = os.environ.get('POSTGRES_HOST', default="")
+POSTGRES_DB = os.environ.get('POSTGRES_DB', default="")
+POSTGRES_USER = os.environ.get('POSTGRES_USER', default="")
+POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD', default="")
 
-#DATABASES = {
-#    "default": {
-#        "ENGINE": "django.db.backends.postgresql",
-#        "NAME": POSTGRES_DB,
-#        "USER": POSTGRES_USER,
-#        "PASSWORD": POSTGRES_PASSWORD,
-#        "HOST": POSTGRES_HOST,
-#        "PORT": 5432,
-#    }
-#}
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": POSTGRES_DB,
+        "USER": POSTGRES_USER,
+        "PASSWORD": POSTGRES_PASSWORD,
+        "HOST": POSTGRES_HOST,
+        "PORT": 5432,
+    }
+}
 
 
 # Password validation
@@ -156,3 +156,42 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Simplified static file serving.
 # https://pypi.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': ('%(asctime)s [%(process)d] [%(levelname)s] '
+                       'pathname=%(pathname)s lineno=%(lineno)s '
+                       'funcname=%(funcName)s %(message)s'),
+            'datefmt': '%Y-%m-%d %H:%M:%S'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        }
+    },
+    'handlers': {
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler',
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    }
+}

@@ -22,6 +22,5 @@ from . import views  # from local directory, import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('Blume_Website.apps.public.urls')),
-    path("accounts/", include('Blume_Website.apps.accounts.urls')),
     path("contact/", include('Blume_Website.apps.contact.urls')),
 ]
